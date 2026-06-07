@@ -83,6 +83,126 @@ This repository contains weekly assignments, coding practice, and hands-on imple
 
 ---
 
+# 📂 Week 3
+
+## File Included
+
+- `Customer_Intelligence_System_Assignment.ipynb`
+
+### Project
+
+**Customer Intelligence System using Classification, Ensemble Learning & Clustering**
+
+### Project Description
+
+Developed an end-to-end Customer Intelligence System using classification, ensemble learning (**Random Forest** and **XGBoost**), and clustering (**K-Means** and **DBSCAN**), achieving optimized predictive performance and actionable segmentation insights.
+
+### Dataset
+
+**Country-data.csv**
+
+The dataset contains socio-economic and health indicators of countries, including:
+
+- Child Mortality
+- Exports
+- Health Expenditure
+- Imports
+- Income
+- Inflation
+- Life Expectancy
+- Total Fertility
+- GDP per Capita
+
+### Topics Covered
+
+- Data Loading and Preprocessing
+- Exploratory Data Analysis (EDA)
+- Missing Value Analysis
+- Feature Scaling using StandardScaler
+- K-Means Clustering
+- Elbow Method for Optimal Cluster Selection
+- DBSCAN Clustering
+- Customer/Country Segmentation
+- Random Forest Classification
+- XGBoost Classification
+- Ensemble Learning Techniques
+- Feature Importance Analysis
+- Model Evaluation using Accuracy, Precision, Recall, and F1-Score
+- Confusion Matrix Analysis
+- Cluster Interpretation and Business Insights
+
+### Key Results
+
+- Successfully segmented countries into meaningful clusters.
+- Identified Developed, Developing, and Underdeveloped country groups.
+- Achieved high predictive performance using Random Forest and XGBoost.
+- Generated actionable insights through clustering and classification.
+- Implemented a complete end-to-end Machine Learning workflow.
+
+### Cluster Insights
+
+#### Cluster 0 — Developed Countries
+
+- Highest Income
+- Highest GDP per Capita
+- Highest Life Expectancy
+- Lowest Child Mortality
+- Advanced Healthcare Indicators
+
+#### Cluster 1 — Underdeveloped Countries
+
+- Lowest Income
+- Lowest GDP per Capita
+- Highest Child Mortality
+- Lowest Life Expectancy
+- High Fertility Rate
+
+#### Cluster 2 — Developing Countries
+
+- Moderate Income
+- Moderate GDP per Capita
+- Improving Healthcare Indicators
+- Growing Economic Performance
+
+### Algorithms Used
+
+#### Clustering
+
+- K-Means Clustering
+- DBSCAN Clustering
+
+#### Classification
+
+- Random Forest Classifier
+- XGBoost Classifier
+
+#### Evaluation Metrics
+
+- Accuracy
+- Precision
+- Recall
+- F1-Score
+- Confusion Matrix
+- Silhouette Score
+
+### Skills Learned
+
+- Machine Learning
+- Unsupervised Learning
+- Clustering Techniques
+- K-Means Algorithm
+- DBSCAN Algorithm
+- Ensemble Learning
+- Random Forest
+- XGBoost
+- Classification Modeling
+- Feature Scaling
+- Feature Importance Analysis
+- Business Intelligence
+- Data-Driven Decision Making
+
+---
+
 # 🛠️ Technologies & Libraries Used
 
 - Python
@@ -91,6 +211,7 @@ This repository contains weekly assignments, coding practice, and hands-on imple
 - Matplotlib
 - Seaborn
 - Scikit-Learn
+- XGBoost
 - Statsmodels
 - Jupyter Notebook
 
@@ -99,3 +220,17 @@ This repository contains weekly assignments, coding practice, and hands-on imple
 # 🚀 Future Updates
 
 Upcoming weekly assignments and projects will be added throughout the internship program.
+
+### Planned Topics
+
+- Deep Learning
+- Natural Language Processing (NLP)
+- Advanced Machine Learning
+- Cloud and AI Solutions
+- Real-World Industry Projects
+
+---
+
+### ⭐ Internship Journey
+
+This repository documents my learning journey as a **Celebal Excellence Intern (CEI)**, showcasing practical implementations of Data Science, Machine Learning, Statistical Analysis, Time Series Forecasting, and Customer Intelligence Systems through hands-on projects and assignments.

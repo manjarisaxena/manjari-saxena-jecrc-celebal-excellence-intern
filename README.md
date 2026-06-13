@@ -203,6 +203,106 @@ The dataset contains socio-economic and health indicators of countries, includin
 
 ---
 
+# 📂 Week 4
+
+## File Included
+
+- `CIFAR10_ANN_CNN_Assignment.ipynb`
+
+### Project
+
+**CIFAR-10 Image Classification using ANN, CNN, and Augmented CNN**
+
+### Project Description
+
+Developed and compared multiple deep learning architectures for image classification on the CIFAR-10 dataset. Implemented a baseline Artificial Neural Network (ANN), a Convolutional Neural Network (CNN), and a Data-Augmented CNN to evaluate the impact of architectural improvements and training strategies on classification performance.
+
+### Dataset
+
+**CIFAR-10 Dataset**
+
+The dataset contains:
+
+- 50,000 Training Images
+- 10,000 Testing Images
+- 10 Image Categories
+- 32×32 RGB Images
+
+### Topics Covered
+
+- Deep Learning Fundamentals
+- Image Classification
+- Data Preprocessing and Normalization
+- Artificial Neural Networks (ANN)
+- Convolutional Neural Networks (CNN)
+- Batch Normalization
+- Max Pooling
+- Dropout Regularization
+- Data Augmentation
+- Early Stopping
+- Model Evaluation and Performance Comparison
+- Data Visualization
+
+### Models Implemented
+
+#### ANN (Artificial Neural Network)
+
+- Flatten Layer
+- Dense Layers
+- Dropout Layers
+- Softmax Output Layer
+
+#### CNN (Convolutional Neural Network)
+
+- Conv2D Layers
+- BatchNormalization
+- MaxPooling2D
+- Dense Classification Layers
+
+#### Augmented CNN
+
+- RandomFlip
+- RandomRotation
+- RandomZoom
+- CNN Architecture with Data Augmentation
+
+### Beginner Tasks Completed
+
+- Increased Dense Layout Configuration (1024 → 512 → 256)
+- Scaled CNN Filter Sizes (32 → 64 → 128)
+- Increased Training Epochs
+- Integrated EarlyStopping
+- Executed Augmented CNN Training
+
+### Key Results
+
+- Successfully trained ANN, CNN, and Augmented CNN models.
+- Generated validation accuracy comparison curves.
+- Created a comparative performance analysis dataframe.
+- CNN achieved the highest performance with a **Test Accuracy of 64.3%**.
+- Demonstrated the effectiveness of convolutional architectures for image classification tasks.
+
+### Evaluation Metrics
+
+- Training Accuracy
+- Validation Accuracy
+- Test Accuracy
+- Loss Analysis
+
+### Skills Learned
+
+- Deep Learning
+- Computer Vision
+- Image Classification
+- CNN Architecture Design
+- Data Augmentation Techniques
+- Hyperparameter Optimization
+- Model Evaluation
+- Performance Analysis
+- TensorFlow & Keras
+
+---
+
 # 🛠️ Technologies & Libraries Used
 
 - Python
@@ -211,6 +311,8 @@ The dataset contains socio-economic and health indicators of countries, includin
 - Matplotlib
 - Seaborn
 - Scikit-Learn
+- TensorFlow
+- Keras
 - XGBoost
 - Statsmodels
 - Jupyter Notebook
@@ -224,8 +326,10 @@ Upcoming weekly assignments and projects will be added throughout the internship
 ### Planned Topics
 
 - Deep Learning
+- Computer Vision
 - Natural Language Processing (NLP)
 - Advanced Machine Learning
+- Transfer Learning
 - Cloud and AI Solutions
 - Real-World Industry Projects
 
@@ -233,4 +337,4 @@ Upcoming weekly assignments and projects will be added throughout the internship
 
 ### ⭐ Internship Journey
 
-This repository documents my learning journey as a **Celebal Excellence Intern (CEI)**, showcasing practical implementations of Data Science, Machine Learning, Statistical Analysis, Time Series Forecasting, and Customer Intelligence Systems through hands-on projects and assignments.
+This repository documents my learning journey as a **Celebal Excellence Intern (CEI)**, showcasing practical implementations of Data Science, Machine Learning, Deep Learning, Statistical Analysis, Time Series Forecasting, Customer Intelligence Systems, and Computer Vision through hands-on projects and assignments.

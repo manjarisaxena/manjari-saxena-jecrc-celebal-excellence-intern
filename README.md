@@ -1,340 +1,281 @@
-# Manjari Saxena — Celebal Excellence Intern (CEI)
+# 🚀 Manjari Saxena — Celebal Excellence Intern (CEI)
 
-Welcome to my internship repository for the **Celebal Technologies Summer Internship Program**.
+Welcome to my internship repository for the **Celebal Technologies Summer Internship Program (CEI)**.
 
-This repository contains weekly assignments, coding practice, and hands-on implementations completed during the internship journey.
+This repository contains weekly assignments, hands-on projects, and practical implementations completed throughout my internship journey in Data Science, Machine Learning, Deep Learning, Computer Vision, and Natural Language Processing.
 
 ---
 
 # 👩‍💻 Intern Details
 
-- **Name:** Manjari Saxena
-- **University:** JECRC University, Jaipur
-- **Internship Role:** Celebal Excellence Intern (CEI)
-- **Organization:** Celebal Technologies
+* **Name:** Manjari Saxena
+* **University:** JECRC University, Jaipur
+* **Internship Role:** Celebal Excellence Intern (CEI)
+* **Organization:** Celebal Technologies
 
 ---
 
 # 📂 Week 1
 
-## File Included
+## Project
 
-- `Week1_Assignment_ManjariSaxena.ipynb`
+Python Fundamentals, Data Analysis & Visualization
 
 ### Topics Covered
 
-- Python Programming Fundamentals
-- NumPy Operations
-- Pandas Data Analysis
-- Data Visualization using Matplotlib and Seaborn
-- Statistical Analysis
-- Data Manipulation Techniques
+* Python Programming Fundamentals
+* NumPy Operations
+* Pandas Data Analysis
+* Data Visualization
+* Statistical Analysis
+* Data Manipulation
 
 ### Skills Learned
 
-- Python Programming
-- Problem Solving
-- Data Analysis
-- Statistical Thinking
-- Visualization Techniques
+* Python Programming
+* Data Analysis
+* Problem Solving
+* Statistical Thinking
+* Data Visualization
 
 ---
 
 # 📂 Week 2
 
-## File Included
+## Project
 
-- `Week2_ManjariSaxena.ipynb`
-
-### Project
-
-**Tesla EV Deliveries and Production Data Analysis (2015–2025)**
+Tesla EV Deliveries and Production Forecasting (2015–2025)
 
 ### Topics Covered
 
-- Data Loading and Preprocessing
-- Exploratory Data Analysis (EDA)
-- Feature Engineering
-- Linear Regression Modeling
-- Cross Validation
-- Hyperparameter Tuning using GridSearchCV
-- Random Forest Regression
-- Model Evaluation using MAE, RMSE, and R² Score
-- Stationarity Testing using ADF Test
-- Time Series Forecasting using ARIMA
-- Forecast Visualization and Interpretation
+* Exploratory Data Analysis (EDA)
+* Feature Engineering
+* Linear Regression
+* Cross Validation
+* Hyperparameter Tuning
+* Random Forest Regression
+* ARIMA Forecasting
+* Time Series Analysis
 
 ### Key Results
 
-- Linear Regression R² Score: **0.9889**
-- Cross Validation Average R² Score: **0.9903**
-- Successful Time Series Forecasting using ARIMA
-- End-to-End Machine Learning Pipeline Implementation
+* Linear Regression R² Score: **0.9889**
+* Cross Validation R² Score: **0.9903**
+* Successful ARIMA Forecasting
 
 ### Skills Learned
 
-- Machine Learning
-- Feature Engineering
-- Model Evaluation
-- Hyperparameter Tuning
-- Time Series Analysis
-- Forecasting Techniques
-- Data Visualization
+* Machine Learning
+* Feature Engineering
+* Time Series Forecasting
+* Model Evaluation
+* Hyperparameter Tuning
 
 ---
 
 # 📂 Week 3
 
-## File Included
+## Project
 
-- `Customer_Intelligence_System_Assignment.ipynb`
-
-### Project
-
-**Customer Intelligence System using Classification, Ensemble Learning & Clustering**
-
-### Project Description
-
-Developed an end-to-end Customer Intelligence System using classification, ensemble learning (**Random Forest** and **XGBoost**), and clustering (**K-Means** and **DBSCAN**), achieving optimized predictive performance and actionable segmentation insights.
-
-### Dataset
-
-**Country-data.csv**
-
-The dataset contains socio-economic and health indicators of countries, including:
-
-- Child Mortality
-- Exports
-- Health Expenditure
-- Imports
-- Income
-- Inflation
-- Life Expectancy
-- Total Fertility
-- GDP per Capita
-
-### Topics Covered
-
-- Data Loading and Preprocessing
-- Exploratory Data Analysis (EDA)
-- Missing Value Analysis
-- Feature Scaling using StandardScaler
-- K-Means Clustering
-- Elbow Method for Optimal Cluster Selection
-- DBSCAN Clustering
-- Customer/Country Segmentation
-- Random Forest Classification
-- XGBoost Classification
-- Ensemble Learning Techniques
-- Feature Importance Analysis
-- Model Evaluation using Accuracy, Precision, Recall, and F1-Score
-- Confusion Matrix Analysis
-- Cluster Interpretation and Business Insights
-
-### Key Results
-
-- Successfully segmented countries into meaningful clusters.
-- Identified Developed, Developing, and Underdeveloped country groups.
-- Achieved high predictive performance using Random Forest and XGBoost.
-- Generated actionable insights through clustering and classification.
-- Implemented a complete end-to-end Machine Learning workflow.
-
-### Cluster Insights
-
-#### Cluster 0 — Developed Countries
-
-- Highest Income
-- Highest GDP per Capita
-- Highest Life Expectancy
-- Lowest Child Mortality
-- Advanced Healthcare Indicators
-
-#### Cluster 1 — Underdeveloped Countries
-
-- Lowest Income
-- Lowest GDP per Capita
-- Highest Child Mortality
-- Lowest Life Expectancy
-- High Fertility Rate
-
-#### Cluster 2 — Developing Countries
-
-- Moderate Income
-- Moderate GDP per Capita
-- Improving Healthcare Indicators
-- Growing Economic Performance
+Customer Intelligence System using Classification, Ensemble Learning & Clustering
 
 ### Algorithms Used
 
 #### Clustering
 
-- K-Means Clustering
-- DBSCAN Clustering
+* K-Means
+* DBSCAN
 
 #### Classification
 
-- Random Forest Classifier
-- XGBoost Classifier
+* Random Forest
+* XGBoost
 
-#### Evaluation Metrics
+### Topics Covered
 
-- Accuracy
-- Precision
-- Recall
-- F1-Score
-- Confusion Matrix
-- Silhouette Score
+* Data Preprocessing
+* Feature Scaling
+* Clustering
+* Classification
+* Ensemble Learning
+* Feature Importance Analysis
+* Business Intelligence
+
+### Key Results
+
+* Country Segmentation
+* Developed, Developing and Underdeveloped Country Clusters
+* High Classification Performance
+* Actionable Business Insights
 
 ### Skills Learned
 
-- Machine Learning
-- Unsupervised Learning
-- Clustering Techniques
-- K-Means Algorithm
-- DBSCAN Algorithm
-- Ensemble Learning
-- Random Forest
-- XGBoost
-- Classification Modeling
-- Feature Scaling
-- Feature Importance Analysis
-- Business Intelligence
-- Data-Driven Decision Making
+* Clustering
+* Ensemble Learning
+* Classification
+* XGBoost
+* Random Forest
+* Business Intelligence
 
 ---
 
 # 📂 Week 4
 
-## File Included
+## Project
 
-- `CIFAR10_ANN_CNN_Assignment.ipynb`
-
-### Project
-
-**CIFAR-10 Image Classification using ANN, CNN, and Augmented CNN**
-
-### Project Description
-
-Developed and compared multiple deep learning architectures for image classification on the CIFAR-10 dataset. Implemented a baseline Artificial Neural Network (ANN), a Convolutional Neural Network (CNN), and a Data-Augmented CNN to evaluate the impact of architectural improvements and training strategies on classification performance.
-
-### Dataset
-
-**CIFAR-10 Dataset**
-
-The dataset contains:
-
-- 50,000 Training Images
-- 10,000 Testing Images
-- 10 Image Categories
-- 32×32 RGB Images
+CIFAR-10 Image Classification using ANN, CNN and Augmented CNN
 
 ### Topics Covered
 
-- Deep Learning Fundamentals
-- Image Classification
-- Data Preprocessing and Normalization
-- Artificial Neural Networks (ANN)
-- Convolutional Neural Networks (CNN)
-- Batch Normalization
-- Max Pooling
-- Dropout Regularization
-- Data Augmentation
-- Early Stopping
-- Model Evaluation and Performance Comparison
-- Data Visualization
+* Computer Vision
+* Deep Learning
+* ANN
+* CNN
+* Data Augmentation
+* Batch Normalization
+* Dropout
+* Early Stopping
 
 ### Models Implemented
 
-#### ANN (Artificial Neural Network)
-
-- Flatten Layer
-- Dense Layers
-- Dropout Layers
-- Softmax Output Layer
-
-#### CNN (Convolutional Neural Network)
-
-- Conv2D Layers
-- BatchNormalization
-- MaxPooling2D
-- Dense Classification Layers
-
-#### Augmented CNN
-
-- RandomFlip
-- RandomRotation
-- RandomZoom
-- CNN Architecture with Data Augmentation
-
-### Beginner Tasks Completed
-
-- Increased Dense Layout Configuration (1024 → 512 → 256)
-- Scaled CNN Filter Sizes (32 → 64 → 128)
-- Increased Training Epochs
-- Integrated EarlyStopping
-- Executed Augmented CNN Training
+* Artificial Neural Network (ANN)
+* Convolutional Neural Network (CNN)
+* Augmented CNN
 
 ### Key Results
 
-- Successfully trained ANN, CNN, and Augmented CNN models.
-- Generated validation accuracy comparison curves.
-- Created a comparative performance analysis dataframe.
-- CNN achieved the highest performance with a **Test Accuracy of 64.3%**.
-- Demonstrated the effectiveness of convolutional architectures for image classification tasks.
-
-### Evaluation Metrics
-
-- Training Accuracy
-- Validation Accuracy
-- Test Accuracy
-- Loss Analysis
+* Comparative Performance Analysis
+* Validation Accuracy Curves
+* CNN Test Accuracy: **64.3%**
 
 ### Skills Learned
 
-- Deep Learning
-- Computer Vision
-- Image Classification
-- CNN Architecture Design
-- Data Augmentation Techniques
-- Hyperparameter Optimization
-- Model Evaluation
-- Performance Analysis
-- TensorFlow & Keras
+* Computer Vision
+* CNN Architecture Design
+* Image Classification
+* Deep Learning
+* TensorFlow & Keras
+
+---
+
+# 📂 Week 5
+
+## Project
+
+Text Generation using Vanilla RNN, LSTM and GRU
+
+### Project Description
+
+Implemented and compared three recurrent neural network architectures for next-word prediction and text generation. The project focuses on learning grammatical structure, contextual dependencies, and sequence patterns from a custom text corpus.
+
+### Topics Covered
+
+* Natural Language Processing (NLP)
+* Text Preprocessing
+* Tokenization
+* N-Gram Sequence Generation
+* Sequence Padding
+* Word Embeddings
+* Recurrent Neural Networks
+* LSTM Networks
+* GRU Networks
+* Text Generation
+* Language Modeling
+* Next Word Prediction
+
+### Models Implemented
+
+#### Vanilla RNN
+
+* Embedding Layer
+* SimpleRNN Layer
+* Dense Output Layer
+
+#### LSTM
+
+* Embedding Layer
+* LSTM Layer
+* Dense Output Layer
+
+#### GRU
+
+* Embedding Layer
+* GRU Layer
+* Dense Output Layer
+
+### Key Results
+
+* Trained Vanilla RNN, LSTM and GRU using identical configurations.
+* Generated meaningful text sequences using next-word prediction.
+* Compared model convergence using loss and accuracy curves.
+* Extended training to 200 epochs.
+* Implemented custom corpus and enhanced model architecture.
+
+### Skills Learned
+
+* Natural Language Processing
+* Sequence Modeling
+* Text Generation
+* Deep Learning
+* RNN
+* LSTM
+* GRU
+* Language Modeling
+* TensorFlow & Keras
 
 ---
 
 # 🛠️ Technologies & Libraries Used
 
-- Python
-- NumPy
-- Pandas
-- Matplotlib
-- Seaborn
-- Scikit-Learn
-- TensorFlow
-- Keras
-- XGBoost
-- Statsmodels
-- Jupyter Notebook
+* Python
+* NumPy
+* Pandas
+* Matplotlib
+* Seaborn
+* Scikit-Learn
+* TensorFlow
+* Keras
+* XGBoost
+* Statsmodels
+* Jupyter Notebook
 
 ---
 
-# 🚀 Future Updates
+# 📈 Skills Developed During Internship
 
-Upcoming weekly assignments and projects will be added throughout the internship program.
-
-### Planned Topics
-
-- Deep Learning
-- Computer Vision
-- Natural Language Processing (NLP)
-- Advanced Machine Learning
-- Transfer Learning
-- Cloud and AI Solutions
-- Real-World Industry Projects
+* Data Analysis
+* Statistical Analysis
+* Machine Learning
+* Deep Learning
+* Computer Vision
+* Natural Language Processing
+* Time Series Forecasting
+* Clustering
+* Classification
+* Ensemble Learning
+* Feature Engineering
+* Hyperparameter Tuning
+* Model Evaluation
+* Data Visualization
+* TensorFlow & Keras
 
 ---
 
-### ⭐ Internship Journey
+# 🚀 Future Learning Goals
 
-This repository documents my learning journey as a **Celebal Excellence Intern (CEI)**, showcasing practical implementations of Data Science, Machine Learning, Deep Learning, Statistical Analysis, Time Series Forecasting, Customer Intelligence Systems, and Computer Vision through hands-on projects and assignments.
+* Transfer Learning
+* Transformers
+* BERT & GPT Models
+* Generative AI
+* Agentic AI
+* MLOps
+* Cloud AI Solutions
+* Large Language Models (LLMs)
+
+---
+
+# ⭐ Internship Journey
+
+This repository showcases my learning journey as a **Celebal Excellence Intern (CEI)**, highlighting practical implementations across Data Science, Machine Learning, Deep Learning, Computer Vision, Time Series Forecasting, Customer Intelligence Systems, and Natural Language Processing through hands-on projects and real-world problem solving.
+
+If you find this repository helpful, feel free to ⭐ the repository.

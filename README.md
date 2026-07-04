@@ -296,6 +296,83 @@ Designed and implemented a **Convolutional Denoising Autoencoder** to remove Gau
 
 ---
 
+# 📂 Week 7
+
+## Project
+
+**ScrollMind AI — RAG-Based Document Question Answering System**
+
+🔗 **Live App:** [scrollmindai.streamlit.app](https://scrollmindai.streamlit.app/)
+
+### Project Description
+
+Built a full-stack **Retrieval-Augmented Generation (RAG)** chatbot that lets users upload PDFs and ask questions grounded in their content, with **native inline citations** pointing to the exact document chunk that supports each part of the answer. Combines **Cohere** (embeddings + grounded generation) with **Pinecone** (vector search) behind a dark-themed **Streamlit** chat interface.
+
+### Topics Covered
+
+- Retrieval-Augmented Generation (RAG)
+- Large Language Models (LLMs)
+- Vector Embeddings
+- Vector Databases
+- Semantic Search
+- Prompt Engineering
+- Grounded Generation & Citations
+- PDF Text Extraction
+- Text Chunking Strategies
+- Session Management
+- Full-Stack AI App Deployment
+
+### Architecture
+
+```
+PDF Upload (Streamlit)
+        │
+        ▼
+Text Extraction (PyMuPDF)
+        │
+        ▼
+Chunking (overlapping word-based chunks)
+        │
+        ▼
+Embedding (Cohere embed-english-v3.0, 1024-dim)
+        │
+        ▼
+Vector Storage (Pinecone serverless index, per-session namespace)
+        │
+   [User Question]
+        │
+        ▼
+Query Embedding → Pinecone similarity search (top-k)
+        │
+        ▼
+Grounded Generation (Cohere command-r-plus, with `documents=` param)
+        │
+        ▼
+Answer + Inline Citations + Source Chunks (Streamlit chat UI)
+```
+
+### Key Features
+
+- Grounded answers using Cohere's Chat API `documents` parameter for fine-grained inline citations.
+- Multi-document support with per-source metadata tagging.
+- Session-scoped Pinecone namespaces so documents from different sessions never mix.
+- Transparent retrieval — every answer includes an expandable panel showing the exact chunks and similarity scores used.
+- Downloadable chat history as `.txt`.
+- Deployed live on Streamlit Community Cloud.
+
+### Skills Learned
+
+- Retrieval-Augmented Generation (RAG)
+- LLM Application Development
+- Vector Embeddings & Semantic Search
+- Pinecone Vector Database
+- Cohere API (Embeddings + Chat)
+- Prompt Engineering
+- Full-Stack AI App Design
+- Streamlit Deployment
+
+---
+
 # 🛠️ Technologies & Libraries Used
 
 - Python
@@ -310,6 +387,10 @@ Designed and implemented a **Convolutional Denoising Autoencoder** to remove Gau
 - XGBoost
 - Statsmodels
 - Jupyter Notebook
+- Cohere
+- Pinecone
+- Streamlit
+- PyMuPDF
 
 ---
 
@@ -335,6 +416,9 @@ Designed and implemented a **Convolutional Denoising Autoencoder** to remove Gau
 - Image Denoising
 - Representation Learning
 - Feature Extraction
+- Retrieval-Augmented Generation (RAG)
+- Vector Databases
+- LLM Application Development
 
 ---
 
@@ -345,14 +429,12 @@ Designed and implemented a **Convolutional Denoising Autoencoder** to remove Gau
 - Diffusion Models
 - Transformers
 - BERT & GPT Models
-- Prompt Engineering
-- Retrieval-Augmented Generation (RAG)
 - LangChain
 - LangGraph
 - Agentic AI
 - MLOps
 - Cloud AI Solutions
-- Large Language Models (LLMs)
+- Advanced Large Language Model (LLM) Fine-Tuning
 
 ---
 
@@ -360,7 +442,7 @@ Designed and implemented a **Convolutional Denoising Autoencoder** to remove Gau
 
 This repository showcases my learning journey as a **Celebal Excellence Intern (CEI)**, highlighting practical implementations across **Data Science, Machine Learning, Deep Learning, Computer Vision, Time Series Forecasting, Natural Language Processing, and Generative AI** through hands-on projects and real-world problem solving.
 
-Each week's project reflects progressive learning—from Python fundamentals and machine learning to deep learning, NLP, computer vision, autoencoders, and modern Generative AI concepts.
+Each week's project reflects progressive learning—from Python fundamentals and machine learning to deep learning, NLP, computer vision, autoencoders, and modern Generative AI concepts, culminating in a deployed full-stack RAG application.
 
 If you find this repository helpful, feel free to ⭐ **Star** the repository.
 

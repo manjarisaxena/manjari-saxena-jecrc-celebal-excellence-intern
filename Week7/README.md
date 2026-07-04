@@ -1,6 +1,8 @@
 # ScrollMind AI 📜🌊
 ### RAG-Based Document Question Answering System
 
+🔗 **Live App:** [scrollmindai.streamlit.app](https://scrollmindai.streamlit.app/)
+
 A Retrieval-Augmented Generation chatbot that lets you upload PDFs and ask
 questions grounded in their content — with **native inline citations** showing
 exactly which chunk of your document backs each part of the answer.
@@ -75,36 +77,42 @@ scrollmind_rag/
 
 ## How to Use 🚀
 
-### 1. Clone / open the project
+### Option 1 — Try it live (no setup needed)
+👉 Just open [scrollmindai.streamlit.app](https://scrollmindai.streamlit.app/),
+paste your own Cohere and Pinecone API keys in the sidebar, upload a PDF, and start chatting.
+
+### Option 2 — Run it locally
+
+#### 1. Clone / open the project
 ```bash
 cd scrollmind_rag
 ```
 
-### 2. Create and activate a virtual environment
+#### 2. Create and activate a virtual environment
 ```bash
 python -m venv venv
 source venv/bin/activate     # On Windows: venv\Scripts\activate
 ```
 
-### 3. Install dependencies
+#### 3. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Get your API keys 🔑
+#### 4. Get your API keys 🔑
 - **Cohere** — sign up free at https://dashboard.cohere.com/api-keys
 - **Pinecone** — sign up free at https://app.pinecone.io
 
 Both keys are entered directly in the Streamlit sidebar when you run the app —
 no `.env` file needed.
 
-### 5. Run the app
+#### 5. Run the app
 ```bash
 cd src
 streamlit run ui_app.py
 ```
 
-### 6. Use it
+#### 6. Use it
 1. Paste your Cohere and Pinecone API keys in the sidebar.
 2. Upload one or more PDFs and click **"Process Documents"**.
 3. Ask questions in the chat box.
@@ -133,7 +141,6 @@ streamlit run ui_app.py
 - Multi-turn follow-up question handling using `chat_history`.
 - Persist Pinecone namespace per document set instead of per session, so
   users can return to previously uploaded documents.
-- Deploy to Streamlit Community Cloud for shareable public access.
 
 ---
 

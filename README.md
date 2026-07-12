@@ -373,6 +373,177 @@ Answer + Inline Citations + Source Chunks (Streamlit chat UI)
 
 ---
 
+# 📂 Week 8
+
+## Project
+
+**Single-Agent Smart Assistant — Agentic AI Pipeline**
+
+### Project Description
+
+Built a **single-agent smart assistant** that understands user queries, applies conditional routing based on intent, and dispatches to the appropriate tool — returning a consistent, structured JSON output for every response. The project demonstrates core agentic AI concepts: intent-based routing, tool integration, and defensive error handling, all within a single-agent architecture that internally simulates multi-step agent behavior.
+
+### Topics Covered
+
+- Agentic AI Fundamentals
+- Single-Agent Architecture
+- Conditional / Intent-Based Routing
+- Tool Integration & Tool Calling
+- Structured JSON Output Design
+- Error Handling in Agent Pipelines
+- Logging for Agent Observability
+
+### Tools Implemented
+
+#### Calculator Tool
+
+- Evaluates mathematical expressions extracted from natural language queries
+- Returns computed result or a graceful error on invalid expressions
+
+#### Keyword Extractor Tool
+
+- Extracts up to 5 significant keywords (length > 4 characters) from input text
+- Deduplicates and lowercases extracted terms
+
+### Agent Routing Logic
+
+```
+User Query
+    │
+    ▼
+Contains "calculate"? ──Yes──▶ Calculator Tool ──▶ {"type": "calculation", "result": ...}
+    │
+    No
+    ▼
+Contains "keywords"? ──Yes──▶ Keyword Extractor Tool ──▶ {"type": "keywords", "result": [...]}
+    │
+    No
+    ▼
+General Response ──▶ {"type": "general", "result": ...}
+
+(Any failure at any stage) ──▶ {"type": "error", "result": "..."}
+```
+
+### Key Features
+
+- Rule-based conditional routing across 3 query types (math, keyword extraction, general).
+- Consistent structured JSON schema (`type` + `result`) across every response path.
+- Top-level exception handling so the agent degrades gracefully instead of crashing.
+- Bonus: Python `logging` module integrated for step-by-step observability (query received → tool routed → result returned).
+- Interactive CLI mode for live query testing alongside batch test cases.
+
+### Key Results
+
+- Verified correct routing across all test queries (calculation, keyword extraction, general).
+- Achieved consistent structured output across all 4 response types (`calculation`, `keywords`, `general`, `error`).
+
+### Skills Learned
+
+- Agentic AI Design
+- Conditional Routing Logic
+- Tool-Calling Patterns
+- JSON Schema Design for Agent I/O
+- Error Handling & Resilience
+- Agent Observability / Logging
+
+---
+
+# 🎯 Final Project
+
+## HireSense AI — Intelligent Hiring Assistant
+
+📁 **Project Folder:** [`final_project/`](./final_project)
+
+### Project Description
+
+An end-to-end, full-stack **AI Hiring Assistant** that evaluates candidate resumes against job requirements using a combination of machine learning and deep learning models, then generates personalized, explainable feedback through a retrieval-based intelligent text generation pipeline. The system also features a conversational interface for candidates to interact with and understand their evaluation results.
+
+Built as the capstone project for the JECRC–Celebal Excellence internship, this project combines every major skill developed across the internship — NLP, deep learning embeddings, ensemble ML, RAG, and full-stack deployment — into a single production-style application.
+
+### Topics Covered
+
+- Resume Parsing & Skill Extraction (spaCy)
+- Semantic Similarity with Sentence Embeddings
+- Hybrid ML Scoring (Deep Learning + Gradient Boosting)
+- Retrieval-Augmented Generation (RAG)
+- Vector Search with FAISS
+- LLM-Powered Explainable Feedback (Google Gemini)
+- Conversational AI Interfaces
+- Authentication & Session Security (JWT, bcrypt)
+- Full-Stack Application Architecture (FastAPI + React)
+- Cloud Database Integration (MongoDB Atlas)
+
+### Architecture
+
+```
+Resume Upload (React / Vite frontend)
+        │
+        ▼
+Text & Skill Extraction (spaCy, pypdf, docx2txt)
+        │
+        ▼
+Semantic Embedding (sentence-transformers: all-MiniLM-L6-v2)
+        │
+        ▼
+Hybrid Scoring Engine
+   ├── Semantic similarity (cosine similarity)
+   └── XGBoost ranking probability (skill match features)
+        │
+        ▼
+Missing Skills Identified
+        │
+        ▼
+RAG Feedback Pipeline
+   ├── FAISS vector store (resume as document)
+   ├── Gemini embeddings (gemini-embedding-001)
+   └── Gemini LLM (gemini-flash-latest) via LangChain RetrievalQA
+        │
+        ▼
+Explainable, Personalized Feedback + Score (FastAPI → React UI)
+```
+
+### Key Features
+
+- **Hybrid Scoring Engine** — combines sentence-embedding semantic similarity with a trained XGBoost classifier for robust, explainable candidate ranking.
+- **RAG-Based Explainable Feedback** — uses FAISS retrieval + Gemini generation to produce actionable, personalized feedback on missing skills rather than a black-box score.
+- **Conversational Interface** — a chatbot panel lets candidates ask follow-up questions about their evaluation.
+- **Evaluation History** — every scan is persisted to MongoDB Atlas and viewable per user.
+- **Secure Authentication** — JWT-based sessions with bcrypt password hashing.
+- **Full-Stack, Deployment-Ready Architecture** — FastAPI backend with interactive Swagger docs, React (Vite) frontend, Dockerized for containerized deployment.
+
+### Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Backend | FastAPI, Python 3.11 |
+| Frontend | React, Vite |
+| Database | MongoDB Atlas |
+| Embeddings | sentence-transformers (`all-MiniLM-L6-v2`) |
+| ML Ranking | XGBoost |
+| RAG / Vector Store | FAISS, LangChain |
+| LLM | Google Gemini (`gemini-flash-latest`, `gemini-embedding-001`) |
+| Auth | JWT, bcrypt |
+
+### Key Results
+
+- Verified end-to-end pipeline: registration → login → resume upload → hybrid scoring → RAG-based feedback → evaluation history, all working locally against a live MongoDB Atlas cluster and the Gemini API.
+- Dataset reference for the ranking model: [Resume Dataset (Kaggle)](https://www.kaggle.com/datasets/rayyankauchali0/resume-dataset).
+
+### Skills Learned
+
+- Full-Stack AI Application Development
+- Retrieval-Augmented Generation (RAG)
+- Hybrid ML/DL Scoring Systems
+- LLM Integration & Prompt-Grounded Generation
+- Vector Search (FAISS)
+- Authentication & API Security
+- FastAPI + React Integration
+- Cloud Database Design (MongoDB Atlas)
+
+📄 See [`final_project/README.md`](./final_project/README.md) for full setup instructions and screenshots.
+
+---
+
 # 🛠️ Technologies & Libraries Used
 
 - Python
@@ -391,6 +562,14 @@ Answer + Inline Citations + Source Chunks (Streamlit chat UI)
 - Pinecone
 - Streamlit
 - PyMuPDF
+- FastAPI
+- React / Vite
+- MongoDB Atlas
+- LangChain
+- FAISS
+- Google Gemini API
+- sentence-transformers
+- spaCy
 
 ---
 
@@ -419,6 +598,11 @@ Answer + Inline Citations + Source Chunks (Streamlit chat UI)
 - Retrieval-Augmented Generation (RAG)
 - Vector Databases
 - LLM Application Development
+- Agentic AI Design
+- Tool-Calling & Conditional Routing
+- Full-Stack AI Application Development
+- Hybrid ML/DL Scoring Systems
+- Authentication & API Security
 
 ---
 
@@ -442,7 +626,7 @@ Answer + Inline Citations + Source Chunks (Streamlit chat UI)
 
 This repository showcases my learning journey as a **Celebal Excellence Intern (CEI)**, highlighting practical implementations across **Data Science, Machine Learning, Deep Learning, Computer Vision, Time Series Forecasting, Natural Language Processing, and Generative AI** through hands-on projects and real-world problem solving.
 
-Each week's project reflects progressive learning—from Python fundamentals and machine learning to deep learning, NLP, computer vision, autoencoders, and modern Generative AI concepts, culminating in a deployed full-stack RAG application.
+Each week's project reflects progressive learning—from Python fundamentals and machine learning to deep learning, NLP, computer vision, autoencoders, and modern Generative AI concepts, culminating in the **Final Project: HireSense AI**, a deployment-ready full-stack AI hiring assistant that brings together RAG, hybrid ML scoring, and conversational AI into one complete application.
 
 If you find this repository helpful, feel free to ⭐ **Star** the repository.
 

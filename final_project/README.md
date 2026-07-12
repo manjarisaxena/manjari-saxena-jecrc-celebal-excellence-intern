@@ -1,69 +1,164 @@
-# HireSense AI — Resume Screening Assistant
+# HireSense AI — Intelligent Hiring Assistant
 
-Full-stack app: FastAPI + MongoDB backend, React (Vite) frontend.
+An end-to-end AI system that evaluates candidate resumes against job requirements using machine learning and deep learning models, and generates personalized, explainable feedback through a retrieval-based intelligent text generation pipeline. It also features a conversational interface for candidate interaction and insights.
 
-## What changed from the original blueprint
+Built as part of the JECRC–Celebal Excellence internship program.
 
-The original `unpack_gravity.py` / `project.md` blueprint had two problems that are fixed here:
+**🔗 Live Demo:** _[Add deployed link here once available]_
 
-1. **No real authentication.** The old `/auth/token` endpoint handed out a valid login token to anyone, no credentials checked. This build adds real `POST /auth/register` and `POST /auth/login` endpoints backed by a MongoDB `users` collection with bcrypt-hashed passwords.
-2. **Hardcoded secrets in `docker-compose.yml`.** Secrets now come from a `.env` file (never committed) instead of being written into the compose file.
+> The app runs fully locally (see setup below) and is verified working end-to-end. Screenshots of the working application are included below in place of a live demo link, which will be added once hosting is finalized.
 
-## Project structure
+---
+
+## Screenshots
+
+**Sign up**
+![Sign up screen](screenshots/04-signup-page.png)
+
+**Resume evaluation**
+![Evaluate a resume](screenshots/01-resume-evaluation.png)
+
+**Evaluation history**
+![Evaluation history](screenshots/02-evaluation-history.png)
+
+**API documentation (FastAPI Swagger UI)**
+![API docs](screenshots/03-api-docs.png)
+
+---
+
+## Features
+
+- **Resume Parsing** — Extracts text and skills from PDF/DOCX resumes
+- **Hybrid Scoring Engine** — Combines semantic similarity (`sentence-transformers`) with a trained `XGBoost` classifier to rank candidates against a job description
+- **Explainable AI Feedback (RAG)** — Uses a FAISS vector store + LangChain `RetrievalQA` pipeline with Google Gemini to generate personalized, actionable feedback on missing skills
+- **Conversational Interface** — Chatbot for candidates to interact with and understand their evaluation
+- **Authentication** — Secure registration/login with hashed passwords and JWT-based sessions
+- **Full-Stack Application** — FastAPI backend with a React (Vite) frontend
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Backend | FastAPI, Python 3.11 |
+| Frontend | React, Vite |
+| Database | MongoDB Atlas |
+| Embeddings | sentence-transformers (`all-MiniLM-L6-v2`) |
+| ML Ranking | XGBoost |
+| RAG / Vector Store | FAISS, LangChain |
+| LLM | Google Gemini (`gemini-1.5-flash`, `gemini-embedding-001`) |
+| Auth | JWT, bcrypt |
+
+---
+
+## Project Structure
 
 ```
-backend/     FastAPI app (auth, resume parsing, matching, RAG feedback, chatbot)
-frontend/    React + Vite app (login, evaluate, history, chat)
-docker-compose.yml
+final_project/
+├── backend/
+│   ├── app/
+│   │   ├── main.py            # FastAPI app entrypoint
+│   │   ├── config.py          # Settings / environment config
+│   │   ├── database.py        # MongoDB connection
+│   │   ├── security.py        # Password hashing, JWT utils
+│   │   ├── auth.py
+│   │   ├── routers/
+│   │   │   ├── auth.py        # Register / login endpoints
+│   │   │   ├── resumes.py     # Resume upload & evaluation
+│   │   │   └── chatbot.py     # Conversational endpoint
+│   │   └── services/
+│   │       ├── parser.py      # Resume text & skill extraction
+│   │       ├── matcher.py     # Hybrid scoring engine
+│   │       └── rag_feedback.py# RAG-based explainable feedback
+│   ├── trained_models/        # Trained XGBoost ranker
+│   └── requirements.txt
+├── frontend/
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── api.js
+│   │   └── components/
+│   │       ├── AuthScreen.jsx
+│   │       ├── ChatPanel.jsx
+│   │       ├── EvaluatePanel.jsx
+│   │       ├── HistoryPanel.jsx
+│   │       └── ResultCard.jsx
+│   └── package.json
+└── docker-compose.yml
 ```
 
-## Run with Docker (easiest)
+---
 
-1. Copy the env template and fill in real values:
-   ```bash
-   cp backend/.env.example backend/.env
-   ```
-   Edit `backend/.env`:
-   - `JWT_SECRET` — any long random string (e.g. `openssl rand -hex 32`)
-   - `GOOGLE_API_KEY` — a Gemini API key from https://aistudio.google.com/app/apikey (optional — without it, feedback falls back to a plain missing-skills list and the chat endpoint returns an error)
+## Running Locally
 
-2. Start everything:
-   ```bash
-   docker-compose up --build
-   ```
+### Prerequisites
+- Python 3.11+
+- Node.js 18+
+- A MongoDB Atlas connection string
+- A Google Gemini API key
 
-3. Open the app: **http://localhost:5173**
-   API docs (Swagger): **http://localhost:8000/docs**
+### 1. Backend Setup
 
-## Run without Docker
-
-### Backend
 ```bash
-cd backend
-python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+cd final_project/backend
+python -m venv venv
+venv\Scripts\activate        # Windows
+# source venv/bin/activate   # macOS/Linux
+
 pip install -r requirements.txt
-python -m spacy download en_core_web_sm
-cp .env.example .env   # then edit JWT_SECRET / GOOGLE_API_KEY
-# Make sure MongoDB is running locally, or update MONGO_URI in .env
+
+copy .env.example .env       # Windows
+# cp .env.example .env       # macOS/Linux
+```
+
+Edit `.env` and fill in:
+```
+MONGO_URI=your_mongodb_atlas_connection_string
+JWT_SECRET=any_random_long_string
+GOOGLE_API_KEY=your_gemini_api_key
+```
+
+Start the server:
+```bash
 uvicorn app.main:app --reload
 ```
 
-### Frontend
+Backend runs at `http://localhost:8000`. Verify with `http://localhost:8000/health`, and full interactive API docs at `http://localhost:8000/docs`.
+
+### 2. Frontend Setup
+
+Open a new terminal:
 ```bash
-cd frontend
+cd final_project/frontend
 npm install
-cp .env.example .env   # VITE_API_URL defaults to http://localhost:8000
+
+copy .env.example .env       # Windows
+# cp .env.example .env       # macOS/Linux
+```
+
+Edit `.env`:
+```
+VITE_API_URL=http://localhost:8000
+```
+
+Start the dev server:
+```bash
 npm run dev
 ```
 
-## First use
+Frontend runs at `http://localhost:5173`.
 
-1. Open the frontend, click **Sign up**, create an account (name, email, password ≥ 8 chars).
-2. Go to **Evaluate**, paste a job description, upload a resume (`.pdf`, `.docx`, or `.txt`), click **Run evaluation**.
-3. Check **History** for past evaluations, or **Chat** to ask follow-up questions.
+---
 
-## Notes
+## Dataset & Model
 
-- The resume-ranking model (`trained_models/xgb_resume_ranker.json`) is optional — if it's not present, the app falls back to a rule-based score (semantic similarity + skill overlap), so the app works out of the box without a pretrained model.
-- CORS in `backend/app/main.py` is currently open to `localhost:5173` only — update `allow_origins` if you deploy the frontend elsewhere.
-- Don't commit `backend/.env` or `frontend/.env` — they're already in `.gitignore`.
+The candidate ranking model was trained using the [Resume Dataset (Kaggle)](https://www.kaggle.com/datasets/rayyankauchali0/resume-dataset).
+
+---
+
+## Author
+
+**Manjari Saxena**
+MCA (AI & ML), JECRC University, Jaipur
+Celebal Technologies Intern — JECRC Celebal Excellence Program
+[Portfolio](https://manjarisaxenaportfolio.lovable.app)

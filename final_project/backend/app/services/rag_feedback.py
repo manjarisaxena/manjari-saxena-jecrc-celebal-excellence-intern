@@ -10,10 +10,11 @@ class ExplainableAIEngine:
     def __init__(self):
         if settings.GOOGLE_API_KEY:
             self.embeddings = GoogleGenerativeAIEmbeddings(
-                model="models/embedding-001", google_api_key=settings.GOOGLE_API_KEY
+               model="models/gemini-embedding-001", google_api_key=settings.GOOGLE_API_KEY
             )
             self.llm = ChatGoogleGenerativeAI(
-                model="gemini-1.5-flash", google_api_key=settings.GOOGLE_API_KEY, temperature=0.2
+            model="gemini-1.5-flash", google_api_key=settings.GOOGLE_API_KEY, temperature=0.2,
+            convert_system_message_to_human=True
             )
         else:
             self.embeddings = None

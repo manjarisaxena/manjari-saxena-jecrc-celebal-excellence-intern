@@ -18,3 +18,4 @@ langchain-google-genai==0.0.11
 faiss-cpu==1.8.0
 pypdf==4.1.0
 docx2txt==0.8
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
